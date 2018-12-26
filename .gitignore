@@ -2,3 +2,6 @@ public
 admin
 node_modules
 vendor
+src/wp-content/plugins
+src/wp-content/themes/portfolio2019/css/
+src/wp-content/themes/portfolio2019/js/
