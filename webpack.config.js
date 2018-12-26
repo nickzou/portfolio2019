@@ -71,7 +71,7 @@ var adminConfig = Object.assign({}, config, {
   plugins: [
     new CleanWebpackPlugin(adminPathsToClean),
     new ExtractTextPlugin('css/admin.css'),
-    new CopyWebpackPlugin([{ from: __dirname + '/src/wp-content', to:  __dirname + 'admin/wp-content/' }])
+    new CopyWebpackPlugin([{ from: __dirname + '/src/wp-content', to:  __dirname + '/admin/wp-content/' }])
   ],
 });
 
