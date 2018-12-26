@@ -1,0 +1,21 @@
+%button-text {
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.button {
+    display: inline-block;
+    @extend %button-text;
+    padding: 10px 25px;
+    color: $yellow;
+    border-width: 1px;
+    border-style: solid;
+    border-color:$yellow;
+    transition: 0.3s ease-in-out;
+    &:hover {
+        color: black;
+        background-color: $yellow;
+    }
+}
