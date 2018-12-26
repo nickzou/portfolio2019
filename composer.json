@@ -25,9 +25,9 @@
         "wpackagist-plugin/duplicate-page":">=2.8",
         "wpackagist-plugin/svg-support":">=2.3.15",
         "wpackagist-plugin/regenerate-thumbnails":">=3.0.2",
+        "wpackagist-plugin/acf-to-rest-api": ">=3.1.0",
         "philippbaschke/acf-pro-installer": "^1.0",
-        "advanced-custom-fields/advanced-custom-fields-pro": "^5.7",
-        "gravityforms/gravityforms": "1.9.14.25"
+        "advanced-custom-fields/advanced-custom-fields-pro": "^5.7"
     },
     "extra": {
         "installer-paths": {
