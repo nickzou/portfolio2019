@@ -19,4 +19,13 @@
         align-items: flex-start;
         z-index: 2;
     }
+    .cta-icon {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: inline-block;
+        color: white;
+        font-size: 45px;
+    }
 }

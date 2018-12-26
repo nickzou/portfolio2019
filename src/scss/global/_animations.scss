@@ -1,0 +1,22 @@
+@keyframes fadeOut {
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  
+  @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+  }
+
+  @keyframes headingsIn {
+      0% {
+          opacity: 0;
+          transform: translateY(-35px);
+      }
+      100% {
+          opacity: 1;
+          transform: translateY(0px);
+      }
+  }

@@ -100,6 +100,10 @@ p {
     }
 }
 
+body {
+    position: relative;
+}
+
 section {
     height: 100vh;
     position: relative;
@@ -112,6 +116,8 @@ section {
     font-weight: 700;
     text-transform: uppercase;
     color: $white;
+    opacity: 0;
+    animation: headingsIn 0.8s ease-out 1 forwards;
     @include breakpoint (tablet) {
         font-size: 4.209rem;
     }
@@ -128,6 +134,8 @@ section {
     font-weight: 500;
     text-transform: uppercase;
     color: $yellow;
+    opacity: 0;
+    animation: headingsIn 0.8s ease-out 0.5s 1 forwards;
     @include breakpoint (tablet) {
         font-size: 2.369rem;
     }
@@ -142,3 +150,29 @@ section {
     height: 100%;
     margin: 0 auto;
 }
+
+.loader {
+    position: fixed;
+    @extend %flex-center;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: $black;
+    &.hidden {
+      animation: fadeOut 0.8s;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  .spinner {
+    border: 2px solid $white;
+    border-top: 2px solid $yellow;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 0.5s linear infinite;
+  }
+  
+ 
