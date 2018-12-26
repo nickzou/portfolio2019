@@ -1,1 +1,1 @@
-console.log("hello wordpress!");
+import '../scss/admin/styles.scss';
