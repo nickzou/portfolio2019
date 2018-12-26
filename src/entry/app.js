@@ -1,1 +1,1 @@
-console.log("hello world!");
+import '../js/public/onLoad.js';
