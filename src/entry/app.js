@@ -1,2 +1,2 @@
-import '../js/public/onLoad.js';
+import '../js/public/app.js';
 import '../scss/public/styles.scss';
