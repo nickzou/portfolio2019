@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const wordpressInstall = require('./wordpressInstall');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 var babelLoader = {test: /\.js$/, loader: 'babel-loader', exclude:/node_modules/, query: {presets: ['@babel/preset-env']}};
 var rawLoader = {test: /\.html$/, loader: 'raw-loader', exclude: /node_modules/};
@@ -19,6 +19,17 @@ var defaultModuleRules = [
   urlLoader
 ];
 
+var publicPathsToClean = [
+  '/public',
+  '/src/public'
+];
+
+var adminPathsToClean = [
+  '/src/wp-content/portfolio2019/js',
+  '/src/wp-content/portfolio2019/css',
+  '/admin/wp-content'
+];
+
 var CSSModuleRules = defaultModuleRules.slice();
 CSSModuleRules.push(styleLoader, scssLoader);
 
@@ -34,30 +45,32 @@ var publicConfig = Object.assign({}, config, {
   name: "publicConfig",
   entry:{  app: ['@babel/polyfill', __dirname + "/src/entry/app.js"]},
   output: {
-    path: __dirname + "/src/wp-content/themes/medial-earlysign",
+    path: __dirname + "/src/public",
     filename: "js/app.js"
   },
   module: {
       rules: extractedCSSModuleRules
   },
   plugins: [
+    new CleanWebpackPlugin(publicPathsToClean),
     new ExtractTextPlugin('css/styles.css'),
-    new CopyWebpackPlugin([{ from: __dirname + '/src/wp-content', to:  __dirname + wordpressInstall + '/wp-content/' }])
+    new CopyWebpackPlugin([{ from: __dirname + '/src/public/', to:  __dirname + '/public/' }])
   ],
 });
 
 var adminConfig = Object.assign({}, config, {
   name: "adminConfig",
-  entry:{  app: [__dirname + "/src/entry/runTime.js"]},
+  entry:{  app: [__dirname + "/src/entry/admin.js"]},
   output: {
-    path: __dirname + "/src/wp-content/themes/medial-earlysign",
-    filename: "js/runTime.js"
+    path: __dirname + "/src/wp-content/themes/portfolio2019",
+    filename: "js/admin.js"
   },
   module: {
       rules: extractedCSSModuleRules
   },
   plugins: [
-    new ExtractTextPlugin('css/run-time.css'),
+    new CleanWebpackPlugin(adminPathsToClean),
+    new ExtractTextPlugin('css/admin.css'),
     new CopyWebpackPlugin([{ from: __dirname + '/src/wp-content', to:  __dirname + 'admin/wp-content/' }])
   ],
 });
