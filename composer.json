@@ -1,0 +1,37 @@
+{
+    "name": "medial-earlysign-wp",
+    "description": "A custom Wordpress multisite for Portfolio 2019.",
+    "repositories":[
+        {
+            "type":"composer",
+            "url":"https://wpackagist.org"
+        },
+        {
+            "type": "package",
+            "package": {
+              "name": "advanced-custom-fields/advanced-custom-fields-pro",
+              "version": "5.7.6",
+              "type": "wordpress-plugin",
+              "dist": {
+                "type": "zip",
+                "url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download"
+              }
+            }
+        }
+    ],
+    "require": {
+        "composer/installers": "~1.0",
+        "wpackagist-plugin/wordpress-seo":">=7.0.2",
+        "wpackagist-plugin/duplicate-page":">=2.8",
+        "wpackagist-plugin/svg-support":">=2.3.15",
+        "wpackagist-plugin/regenerate-thumbnails":">=3.0.2",
+        "philippbaschke/acf-pro-installer": "^1.0",
+        "advanced-custom-fields/advanced-custom-fields-pro": "^5.7",
+        "gravityforms/gravityforms": "1.9.14.25"
+    },
+    "extra": {
+        "installer-paths": {
+            "src/wp-content/plugins/{$name}": ["vendor:wpackagist-plugin", "type:wordpress-plugin"]
+        }
+    }
+}
