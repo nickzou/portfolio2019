@@ -8,11 +8,12 @@
     <title>Hello World!</title>
 </head>
 <body>
-    <section id="hero" class="hero">
+    <section id="hero" class="hero jarallax">
         <div class="container">
             <h1 class="site-title">Nick Zou</h1>
             <h2 class="site-subtitle">front end design and development</h2>
         </div>
+        <img id="hero-background" class="jarallax-img">
     </section>
 </body>
 <script src="js/app.js"></script>
