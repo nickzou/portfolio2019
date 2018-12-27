@@ -7,13 +7,10 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <title>Hello World!</title>
 </head>
-<body>
-    <section id="hero" class="hero">
-        <div class="container">
-            <h1 class="site-title">Nick Zou</h1>
-            <h2 class="site-subtitle">front end design and development</h2>
-        </div>
-    </section>
+<body id="body">
+    <?php include('sections/loader.php'); ?>
+    <?php include('sections/hero.php'); ?>
 </body>
+<script src="https://unpkg.com/ionicons@4.5.0/dist/ionicons.js"></script>
 <script src="js/app.js"></script>
 </html>

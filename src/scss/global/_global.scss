@@ -1,3 +1,9 @@
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 :root {
     @extend %raleway;
     background-color: $white;
@@ -10,10 +16,18 @@
     }
 }
 
-%flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.jarallax {
+    position: relative;
+    z-index: 0;
+}
+.jarallax > .jarallax-img {
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
 a {
@@ -86,8 +100,13 @@ p {
     }
 }
 
+body {
+    position: relative;
+}
+
 section {
     height: 100vh;
+    position: relative;
 }
 
 .site-title {
@@ -97,12 +116,16 @@ section {
     font-weight: 700;
     text-transform: uppercase;
     color: $white;
-    @include breakpoint (tablet) {
+    opacity: 0;
+    animation: headingsIn 0.8s ease-out 1 forwards;
+    @include breakpoint (laptop) {
         font-size: 4.209rem;
+        text-align: center;
     }
-    @include breakpoint (phablet) {
+    @include breakpoint (tablet) {
         font-size: 3.157rem;
         letter-spacing: 10px;
+        line-height: 125%;
     }
 }
 
@@ -113,11 +136,15 @@ section {
     font-weight: 500;
     text-transform: uppercase;
     color: $yellow;
-    @include breakpoint (tablet) {
+    opacity: 0;
+    animation: headingsIn 0.8s ease-out 0.5s 1 forwards;
+    @include breakpoint (laptop) {
         font-size: 2.369rem;
+        text-align: center;
     }
-    @include breakpoint (phablet) {
+    @include breakpoint (tablet) {
         font-size: 1.777rem;
+        line-height: 115%;
     }
 }
 
@@ -126,4 +153,34 @@ section {
     max-width: 1440px;
     height: 100%;
     margin: 0 auto;
+    @include breakpoint (1440px) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
+
+.loader {
+    position: fixed;
+    @extend %flex-center;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: $black;
+    &.hidden {
+      animation: fadeOut 0.8s;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  .spinner {
+    border: 2px solid $white;
+    border-top: 2px solid $yellow;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 0.5s linear infinite;
+  }
+  
+ 
