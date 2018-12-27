@@ -10,6 +10,7 @@
 <body id="body">
     <?php include('sections/loader.php'); ?>
     <?php include('sections/hero.php'); ?>
+    <?php include('sections/about.php'); ?>
 </body>
 <script src="https://unpkg.com/ionicons@4.5.0/dist/ionicons.js"></script>
 <script src="js/app.js"></script>
