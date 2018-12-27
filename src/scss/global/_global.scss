@@ -1,3 +1,9 @@
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 :root {
     @extend %raleway;
     background-color: $white;
@@ -22,12 +28,6 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-}
-
-%flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 a {
@@ -118,12 +118,14 @@ section {
     color: $white;
     opacity: 0;
     animation: headingsIn 0.8s ease-out 1 forwards;
-    @include breakpoint (tablet) {
+    @include breakpoint (laptop) {
         font-size: 4.209rem;
+        text-align: center;
     }
-    @include breakpoint (phablet) {
+    @include breakpoint (tablet) {
         font-size: 3.157rem;
         letter-spacing: 10px;
+        line-height: 125%;
     }
 }
 
@@ -136,11 +138,13 @@ section {
     color: $yellow;
     opacity: 0;
     animation: headingsIn 0.8s ease-out 0.5s 1 forwards;
-    @include breakpoint (tablet) {
+    @include breakpoint (laptop) {
         font-size: 2.369rem;
+        text-align: center;
     }
-    @include breakpoint (phablet) {
+    @include breakpoint (tablet) {
         font-size: 1.777rem;
+        line-height: 115%;
     }
 }
 
@@ -149,6 +153,10 @@ section {
     max-width: 1440px;
     height: 100%;
     margin: 0 auto;
+    @include breakpoint (1440px) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
 
 .loader {
