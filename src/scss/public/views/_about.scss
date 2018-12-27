@@ -1,4 +1,8 @@
 .about {
-    display: grid;
-    grid-template-columns: 33.333333333333% 66.6666666666666%;
+    .container {
+        display: grid;
+        grid-template-columns: 33.333333333333% 66.6666666666666%;
+        height: 100%;
+        width: 100%;
+    }
 }
