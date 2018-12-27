@@ -1,9 +1,9 @@
 import loadingScreen from './functions/loadingScreen';
-import fullpage from 'fullpage.js';
+import SmoothScroll from 'smooth-scroll';
 
 document.addEventListener('DOMContentLoaded', ()=> {
     loadingScreen();
-    new fullpage('#site-wrapper', {
-        autoScrolling: true
+    new SmoothScroll('a[href*="#"]', {
+        speed: 300
     });
 });
