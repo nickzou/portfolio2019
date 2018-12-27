@@ -119,6 +119,9 @@ section {
         padding-left: 15px;
         padding-right: 15px;
     }
+    &.full-width {
+        max-width: initial;
+    }
 }
 
 .loader {
