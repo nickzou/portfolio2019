@@ -8,6 +8,14 @@
             </div>
         </div>
         <div id="about-feature-panel" class="feature-panel section-background-image jarallax">
+            <div id="about-feature-panel" class="feature-panel">
+                <div class="container inner-container">
+                    <nav id="about-feature-nav" class="tabbed-navigation">
+                        <button id="resume" class="tab">resume</button>
+                        <button id="skills" class="tab">skills</button>
+                    </nav>
+                </div>
+            </div>
             <img id="about-background" class="jarallax-img">
         </div>
     </div>
