@@ -10,6 +10,7 @@
     @extend %button-text;
     padding: 10px 25px;
     color: $yellow;
+    background: none;
     border-width: 1px;
     border-style: solid;
     border-color:$yellow;
@@ -18,4 +19,9 @@
         color: black;
         background-color: $yellow;
     }
+}
+
+button {
+    @extend .button;
+    cursor: pointer;
 }
