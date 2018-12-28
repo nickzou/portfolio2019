@@ -12,13 +12,11 @@ document.addEventListener('DOMContentLoaded', ()=> {
         aboutText.innerHTML = data.content.rendered;
         aboutBackgroundImage.srcset = data.acf.background_image.sizes["hero-background-size-4k"] + " 1921w, " + data.acf.background_image.sizes["hero-background-size-hd"] + " 1441w, " + data.acf.background_image.sizes["hero-background-size-large"] + " 769w, " + data.acf.background_image.sizes["hero-background-size-tablet"] + " 415w, " + data.acf.background_image.sizes["hero-background-size-phablet"] + " 320w";
         //Checks if Profile Picture has been set, then renders it
-        ((data)=> {
-            if (data.acf.profile_picture) {
-                let profilePicture = document.createElement("IMG");
-                profilePicture.className = "about-image";
-                infoPanelContent.prepend(profilePicture);
-                profilePicture.src = data.acf.profile_picture.sizes.thumbnail;
-            }
-        })(data);
+        if (data.acf.profile_picture) {
+            let profilePicture = document.createElement("IMG");
+            profilePicture.className = "about-image";
+            infoPanelContent.prepend(profilePicture);
+            profilePicture.src = data.acf.profile_picture.sizes.thumbnail;
+        }
     });
 });
