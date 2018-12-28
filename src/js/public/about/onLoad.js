@@ -1,11 +1,12 @@
-import {aboutTitle, aboutText, infoPanelContent, aboutBackgroundImage} from './variables';
+import {aboutTitle, aboutText, infoPanelContent, aboutBackgroundImage, tabUnderline, activeTab, tabs} from './variables';
+import setUnderline from './functions/setUnderline';
 
 document.addEventListener('DOMContentLoaded', ()=> {
     fetch('http://localhost/portfolio2019/admin//wp-json/wp/v2/pages/19')
     .then((response)=> {return response.json();})
     .then((data)=> {
         //Temporary output to be able to see the data being returned
-        console.log(data);
+        //console.log(data);
         //sets About Section title
         aboutTitle.innerHTML = data.title.rendered;
         //sets About Section content
@@ -18,5 +19,19 @@ document.addEventListener('DOMContentLoaded', ()=> {
             infoPanelContent.prepend(profilePicture);
             profilePicture.src = data.acf.profile_picture.sizes.thumbnail;
         }
+        setUnderline(activeTab, tabUnderline);
+        const removeActiveClass = (actives) => {
+            actives.forEach((active)=> {
+                active.classList.remove("active");
+                
+            });
+        };
+        tabs.forEach((tab)=> {
+            tab.addEventListener('click', function () {
+                removeActiveClass(tabs);
+                this.classList.add("active");
+                setUnderline(this, tabUnderline);
+            });
+        });
     });
 });

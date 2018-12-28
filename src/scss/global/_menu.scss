@@ -23,3 +23,29 @@
         color: $yellow;
     }
 }
+
+.tab {
+    @extend h2;
+    padding: 0;
+    margin: 0 25px;
+    border: none;
+    color: $white;
+    transition: 0.3s ease-in-out;
+    &:hover, &.active {
+        color: $yellow;
+    }
+}
+
+.tabbed-navigation {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.underline {
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    height: 10px;
+    background-color: $yellow;
+    transition: 0.3s ease-in-out;
+}

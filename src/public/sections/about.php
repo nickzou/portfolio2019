@@ -11,8 +11,9 @@
             <div id="about-feature-panel" class="feature-panel">
                 <div class="container inner-container">
                     <nav id="about-feature-nav" class="tabbed-navigation">
-                        <button id="resume" class="tab">resume</button>
+                        <button id="resume" class="tab active">resume</button>
                         <button id="skills" class="tab">skills</button>
+                        <span id="underline" class="underline"></span>
                     </nav>
                 </div>
             </div>
