@@ -5,7 +5,6 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        z-index: 2;
         @include breakpoint (laptop) {
             align-items: center;
         }

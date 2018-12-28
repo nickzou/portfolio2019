@@ -27,17 +27,27 @@
     align-items: stretch;
 }
 
+.feature-panel {
+    position: relative;
+    z-index: 2;
+}
+
 .container {
     width: 100%;
     max-width: 1440px;
     height: 100%;
     margin: 0 auto;
+    z-index: 2;
     @include breakpoint (1440px) {
         padding-left: 15px;
         padding-right: 15px;
     }
     &.full-width {
         max-width: initial;
+    }
+    &.inner-container {
+        max-width: 80%;
+        margin-top: $header-height;
     }
 }
 
