@@ -1,0 +1,1 @@
+export const aboutTitle = document.getElementById('about-title');
