@@ -8,6 +8,7 @@
     <title>Hello World!</title>
 </head>
 <body id="body">
+<?php include('sections/menu.php'); ?>
     <?php include('sections/loader.php'); ?>
     <?php include('sections/hero.php'); ?>
 </body>
