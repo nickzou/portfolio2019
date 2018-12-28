@@ -9,6 +9,7 @@
 </head>
 <body id="body">
     <div id="site-wrapper">
+        <?php include('sections/menu.php'); ?>
         <?php include('sections/loader.php'); ?>
         <?php include('sections/hero.php'); ?>
         <?php include('sections/about.php'); ?>
