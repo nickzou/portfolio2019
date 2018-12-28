@@ -5,6 +5,15 @@
     text-transform: uppercase;
 }
 
+button {
+    background: none;
+    cursor: pointer;
+    outline: none;
+    &:focus {
+        outline: none;
+    }
+}
+
 .button {
     display: inline-block;
     @extend %button-text;
@@ -19,9 +28,4 @@
         color: black;
         background-color: $yellow;
     }
-}
-
-button {
-    @extend .button;
-    cursor: pointer;
 }
