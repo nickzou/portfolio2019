@@ -99,7 +99,7 @@
             "min": 0,
             "max": 0,
             "layout": "row",
-            "button_label": "",
+            "button_label": "Add Section",
             "sub_fields": [
                 {
                     "key": "field_5c26ea63449d2",
@@ -253,5 +253,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1546054726
+    "modified": 1546054892
 }
