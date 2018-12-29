@@ -15,6 +15,8 @@
                         <button id="skills" class="tab">skills</button>
                         <span id="underline" class="underline"></span>
                     </nav>
+                    <div class="feature-panel-content">
+                    </div>
                 </div>
             </div>
             <img id="about-background" class="jarallax-img">
