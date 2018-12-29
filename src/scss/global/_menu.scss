@@ -10,6 +10,15 @@
     align-items: center;
     background-color: black;
     z-index: 50;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease-in;
+    transform: translateY(-#{$header-height});
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
 }
 
 .menu-item {
