@@ -19,7 +19,7 @@
     text-transform: uppercase;
     color: $white;
     opacity: 0;
-    animation: headingsIn 0.8s ease-out 1 forwards;
+    animation: TextIn 0.8s ease-out 1 forwards;
     @include breakpoint (laptop) {
         font-size: 4.209rem;
         text-align: center;
@@ -39,7 +39,7 @@
     text-transform: uppercase;
     color: $yellow;
     opacity: 0;
-    animation: headingsIn 0.8s ease-out 0.5s 1 forwards;
+    animation: TextIn 0.8s ease-out 0.5s 1 forwards;
     @include breakpoint (laptop) {
         font-size: 2.369rem;
         text-align: center;
