@@ -1,4 +1,4 @@
-import {aboutTitle, aboutText, infoPanelContent, aboutBackgroundImage, tabUnderline, activeTab, tabs, featurePanelContent} from './variables';
+import {aboutTitle, aboutText, infoPanelContent, aboutBackgroundImage, tabUnderline, activeTab, tabs, featurePanelSlide} from './variables';
 import setUnderline from './functions/setUnderline';
 import createElementandSetClass from '../global/functions/createElementandSetClass';
 
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
                 sectionBlock.appendChild(sectionTitle);
                 sectionBlock.appendChild(sectionList);
 
-                featurePanelContent.appendChild(sectionBlock);
+                featurePanelSlide.appendChild(sectionBlock);
             });
         }
     });

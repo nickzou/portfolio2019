@@ -5,4 +5,4 @@ export const aboutBackgroundImage = document.getElementById('about-background');
 export const tabUnderline = document.getElementById('underline');
 export const tabs = document.querySelectorAll('.tabbed-navigation .tab');
 export const activeTab = document.querySelector('.tabbed-navigation .active');
-export const featurePanelContent = document.querySelector('#about-feature-panel .feature-panel-content');
+export const featurePanelSlide = document.querySelector('#about-feature-panel .feature-panel-slide');
