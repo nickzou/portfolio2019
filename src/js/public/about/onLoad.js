@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
         //If resume section, for each section, render content
         if(resumeSection) {
             resumeSection.forEach((section) => {
-                const {section_title, item} = section;
+                const {section_title, item} = section; 
 
                 //Creates the section DOM elements
                 let sectionBlock = createElementandSetClass('SECTION', 'resume-section');
