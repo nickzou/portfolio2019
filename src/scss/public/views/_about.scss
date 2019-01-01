@@ -2,8 +2,10 @@
     .full-width {
         display: grid;
         grid-template-columns: 33.333333333333% 66.6666666666666%;
+        grid-template-rows: 100%;
         height: 100%;
         width: 100%;
+        padding: 0;
     }
     .inner-container {
         padding: 60px 15px;
@@ -22,6 +24,18 @@
     .feature-panel-content {
         position: relative;
         z-index:2;
+        .inner-container {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    .tabbed-navigation {
+        height: 60px;
+    }
+    .feature-panel-slide-container {
+        height: calc(100% - 60px);
+        overflow: hidden;
+        padding-top: 20px;
     }
 }
 

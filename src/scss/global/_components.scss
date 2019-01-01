@@ -32,6 +32,11 @@
     z-index: 2;
 }
 
+.feature-panel-content {
+    padding-top: $header-height;
+    height: 100%;
+}
+
 .container {
     width: 100%;
     max-width: 1440px;
@@ -47,7 +52,6 @@
     }
     &.inner-container {
         max-width: 80%;
-        margin-top: $header-height;
     }
 }
 
