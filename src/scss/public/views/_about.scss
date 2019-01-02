@@ -6,7 +6,7 @@
         height: 100%;
         width: 100%;
         padding: 0;
-        @include breakpoint (1024px) {
+        @include breakpoint (desktop) {
             grid-template-columns: 45% 55%;
         }
     }
@@ -47,7 +47,7 @@
     height: 150px;
     border-radius: 50%;
     margin: 50px auto;
-    @include breakpoint (1024px) {
+    @include breakpoint (desktop) {
         width: 120px;
         height: 120px;
         margin: 20px auto;
