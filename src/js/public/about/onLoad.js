@@ -1,5 +1,6 @@
-import {aboutTitle, aboutText, infoPanelContent, aboutBackgroundImage, tabUnderline, activeTab, tabs, featurePanelSlide} from './variables';
+import {aboutTitle, aboutText, infoPanelContent, aboutBackgroundImage, tabUnderline, activeTab, tabs, resumeTab, skillsTab} from './variables';
 import setUnderline from './functions/setUnderline';
+import createSection from './functions/createSection';
 import createElementandSetClass from '../global/functions/createElementandSetClass';
 
 document.addEventListener('DOMContentLoaded', ()=> {
@@ -8,6 +9,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     .then((data)=> {
         const {title, content, acf} = data;
         const resumeSection = acf.resume_section;
+        const skillsSection = acf.skills_section;
 
         //sets About Section title
         aboutTitle.innerHTML = title.rendered;
@@ -44,35 +46,12 @@ document.addEventListener('DOMContentLoaded', ()=> {
                 setUnderline(this, tabUnderline);
             });
         });
-
-        //Function that takes "item" object and returns data in HTML form
-        const renderResumeItem = (item) => {
-            const {title, subtitle, duration, description} = item;
-
-            return `<li class="resume-item"><h4 class="item-title">${title}</h4><h5 class="item-subtitle">${subtitle} / ${duration}</h5><p class="item-description">${description}</p></li>`;
-
-        };
-
-        //If resume section, for each section, render content
-        if(resumeSection) {
-            resumeSection.forEach((section) => {
-                const {section_title, item} = section; 
-
-                //Creates the section DOM elements
-                let sectionBlock = createElementandSetClass('SECTION', 'resume-section');
-                let sectionList = createElementandSetClass('UL', 'resume-list');
-                let sectionTitle = createElementandSetClass('H3', 'resume-section-title');
-
-                //Sets data to above created DOM elements
-                sectionTitle.innerHTML = section_title;
-                item.forEach((i)=> { sectionList.innerHTML += renderResumeItem(i)});
-
-                //Renders them to the "feature-panel-content" DOM element
-                sectionBlock.appendChild(sectionTitle);
-                sectionBlock.appendChild(sectionList);
-
-                featurePanelSlide.appendChild(sectionBlock);
-            });
+        
+        if (resumeSection) {
+            createSection(resumeSection, 'resume');
         }
+
+        resumeTab.addEventListener('click', () => createSection(resumeSection, 'resume'));
+        skillsTab.addEventListener('click', () => createSection(skillsSection, 'skills'));
     });
 });
