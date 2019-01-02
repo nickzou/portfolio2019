@@ -1,18 +1,17 @@
 import {jarallax} from 'jarallax';
-import {siteTitle, siteSubtitle} from '../variables';
+import {siteTitle, siteSubtitle, heroBackgroundImage} from './variables';
 
 document.addEventListener('DOMContentLoaded', ()=> {
     fetch('http://localhost/portfolio2019/admin//wp-json/wp/v2/pages/5')
     .then((response) => { return response.json(); })
     .then((data)=> {
-        //Temporary to quickly view data in Inspector
-        console.log(data);
+        const {acf} = data;
         //sets Hero Background Image
-        heroBackgroundImage.srcset = data.acf.background_image.sizes["hero-background-size-4k"] + " 1921w, " + data.acf.background_image.sizes["hero-background-size-hd"] + " 1441w, " + data.acf.background_image.sizes["hero-background-size-large"] + " 769w, " + data.acf.background_image.sizes["hero-background-size-tablet"] + " 415w, " + data.acf.background_image.sizes["hero-background-size-phablet"] + " 320w";
+        heroBackgroundImage.srcset = acf.background_image.sizes["hero-background-size-4k"] + " 1921w, " + acf.background_image.sizes["hero-background-size-hd"] + " 1441w, " + acf.background_image.sizes["hero-background-size-large"] + " 769w, " + acf.background_image.sizes["hero-background-size-tablet"] + " 415w, " + acf.background_image.sizes["hero-background-size-phablet"] + " 320w";
         //sets Hero Title
-        siteTitle.innerHTML = data.acf.site_title;
+        siteTitle.innerHTML = acf.site_title;
         //sets Hero Subtitle
-        siteSubtitle.innerHTML = data.acf.site_subtitle;
+        siteSubtitle.innerHTML = acf.site_subtitle;
         //Creates parallax effect
         jarallax(document.querySelectorAll('.jarallax'), {
             speed: 0.2

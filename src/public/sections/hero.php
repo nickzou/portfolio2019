@@ -1,4 +1,4 @@
-<section id="hero" class="hero jarallax section">
+<section id="hero" class="hero section-background-image jarallax">
     <div class="container">
         <h1 id="site-title" class="site-title"></h1>
         <h2 id="site-subtitle" class="site-subtitle"></h2>
