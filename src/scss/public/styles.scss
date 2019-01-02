@@ -2,10 +2,15 @@
 @import '~bootstrap/scss/variables';
 @import '~bootstrap/scss/mixins';
 @import '~bootstrap/scss/reboot';
+@import '~fullpage.js/dist/fullpage.css';
 @import '../global/mixins';
 @import '../global/fonts';
 @import '../global/colors';
+@import '../global/variables';
 @import '../global/global';
 @import '../global/buttons';
 @import '../global/animations';
+@import '../global/components';
+@import '../global/menu';
 @import 'views/hero';
+@import 'views/about';

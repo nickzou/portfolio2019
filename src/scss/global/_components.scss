@@ -1,0 +1,81 @@
+.section-background-image {
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(black, 0.55);
+        z-index: 1; 
+    }
+}
+
+.info-panel {
+    background-color: $black;
+    padding: 20px 50px;
+    color: white;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: minmax(auto, 10%) auto;
+}
+
+.info-panel-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.feature-panel {
+    position: relative;
+    z-index: 2;
+}
+
+.feature-panel-content {
+    padding-top: $header-height;
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    height: 100%;
+    margin: 0 auto;
+    z-index: 2;
+    @include breakpoint (1440px) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    &.full-width {
+        max-width: initial;
+    }
+    &.inner-container {
+        max-width: 80%;
+    }
+}
+
+.loader {
+    position: fixed;
+    @extend %flex-center;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: $black;
+    &.hidden {
+      animation: fadeOut 0.8s;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  .spinner {
+    border: 2px solid $white;
+    border-top: 2px solid $yellow;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 0.5s linear infinite;
+  }
+  
