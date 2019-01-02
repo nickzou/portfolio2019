@@ -1,7 +1,7 @@
 import loadingScreen from './functions/loadingScreen';
 import scrolledMenu from './functions/scrolledMenu';
 import SmoothScroll from 'smooth-scroll';
-import {menu} from './variables';
+import {menu, mobileMenuButton} from './variables';
 
 document.addEventListener('DOMContentLoaded', ()=> {
     loadingScreen();
@@ -10,5 +10,9 @@ document.addEventListener('DOMContentLoaded', ()=> {
     });
     document.addEventListener('scroll', ()=> {
         setInterval(scrolledMenu(), 300);
+    });
+    mobileMenuButton.addEventListener('click', function() {
+        this.classList.toggle('is-active');
+        menu.classList.toggle('mobile-open');
     });
 });
