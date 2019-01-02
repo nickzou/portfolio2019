@@ -17,10 +17,22 @@
     @include breakpoint (1024px) {
         padding-left: 20px;
     }
+    @include breakpoint (768px) {
+        right: -100vw;
+        width: 100vw;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        padding: 0;
+    }
     &.active {
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
+    }
+    &.mobile-open {
+        right: 0;
     }
 }
 
@@ -35,9 +47,29 @@
         font-size: 0.9rem;
         padding: 5px 10px;
     }
+    @include breakpoint (tablet) {
+        text-align: center;
+        padding: 25px 0;
+    }
     &:hover, &.active {
         color: $yellow;
     }
+}
+
+.mobile-menu-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: black;
+    z-index: 51;
+    @include breakpoint (tablet) {
+        display: block;
+    }
+}
+
+.hamburger {
+    display: flex;
 }
 
 .tab {
