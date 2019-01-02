@@ -331,25 +331,6 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_5c2afe41b5b04",
-                            "label": "Description",
-                            "name": "description",
-                            "type": "textarea",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "maxlength": "",
-                            "rows": "",
-                            "new_lines": ""
-                        },
-                        {
                             "key": "field_5c2afe81b5b05",
                             "label": "Icon",
                             "name": "icon",
@@ -395,5 +376,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1546321579
+    "modified": 1546388585
 }
