@@ -5,11 +5,21 @@
     text-transform: uppercase;
 }
 
+button {
+    background: none;
+    cursor: pointer;
+    outline: none;
+    &:focus {
+        outline: none;
+    }
+}
+
 .button {
     display: inline-block;
     @extend %button-text;
     padding: 10px 25px;
     color: $yellow;
+    background: none;
     border-width: 1px;
     border-style: solid;
     border-color:$yellow;

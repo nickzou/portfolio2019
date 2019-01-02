@@ -25,6 +25,7 @@
     "css-loader": "^0.28.11",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.11",
+    "fullpage.js": "^3.0.4",
     "hamburgers": "^0.9.3",
     "install": "^0.12.1",
     "jarallax": "^1.10.3",

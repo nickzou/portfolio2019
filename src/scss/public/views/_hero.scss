@@ -1,23 +1,10 @@
 .hero {
-    background-size: cover;
-    &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(black, 0.55);
-        z-index: 1;
-        
-    }
     .container {
         position: relative;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        z-index: 2;
         @include breakpoint (laptop) {
             align-items: center;
         }
@@ -32,7 +19,7 @@
     text-transform: uppercase;
     color: $white;
     opacity: 0;
-    animation: headingsIn 0.8s ease-out 1 forwards;
+    animation: TextIn 0.8s ease-out 1 forwards;
     @include breakpoint (laptop) {
         font-size: 4.209rem;
         text-align: center;
@@ -52,7 +39,7 @@
     text-transform: uppercase;
     color: $yellow;
     opacity: 0;
-    animation: headingsIn 0.8s ease-out 0.5s 1 forwards;
+    animation: TextIn 0.8s ease-out 0.5s 1 forwards;
     @include breakpoint (laptop) {
         font-size: 2.369rem;
         text-align: center;
@@ -72,6 +59,7 @@
     color: white;
     font-size: 45px;
     &:hover {
+        color: white;
        animation: ctaHover 0.5s ease-in-out infinite alternate;
     }
 }
