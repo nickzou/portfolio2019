@@ -1,11 +1,10 @@
-import {aboutTitle, aboutText, infoPanelContent, aboutBackgroundImage, tabUnderline, activeTab, tabs, resumeTab, skillsTab} from './variables';
+import {aboutTitle, infoPanelContent, aboutBackgroundImage, tabUnderline, activeTab, tabs, resumeTab, skillsTab} from './variables';
 import setUnderline from './functions/setUnderline';
 import createSection from './functions/createSection';
-import createElementandSetClass from '../global/functions/createElementandSetClass';
 
 document.addEventListener('DOMContentLoaded', ()=> {
     fetch('http://localhost/portfolio2019/admin//wp-json/wp/v2/pages/19')
-    .then((response)=> {return response.json();})
+    .then((response)=> response.json())
     .then((data)=> {
         const {title, content, acf} = data;
         const resumeSection = acf.resume_section;
@@ -14,18 +13,22 @@ document.addEventListener('DOMContentLoaded', ()=> {
         //sets About Section title
         aboutTitle.innerHTML = title.rendered;
 
-        //sets About Section content
-        aboutText.innerHTML = content.rendered;
-
         //renders the Background Image in the Featured Panel
         aboutBackgroundImage.srcset = `${acf.background_image.sizes["hero-background-size-4k"]} 1921w, ${acf.background_image.sizes["hero-background-size-hd"]} 1441w, ${acf.background_image.sizes["hero-background-size-large"]} 769w, ${acf.background_image.sizes["hero-background-size-tablet"]} 415w, ${acf.background_image.sizes["hero-background-size-phablet"]} 320w`;
 
         //Checks if Profile Picture has been set, then renders it
-        if (acf.profile_picture) {
-            let profilePicture = createElementandSetClass('IMG', 'about-image');
-            infoPanelContent.prepend(profilePicture);
-            profilePicture.src = acf.profile_picture.sizes.thumbnail;
+        let profilePicture = () => {
+            if (acf.profile_picture) {
+                return `<img class="about-image" data-aos="fade-down" src="${acf.profile_picture.sizes.thumbnail}">`;
+            }
         }
+
+        //Sets bio section text
+        infoPanelContent.innerHTML = `
+            ${profilePicture()}
+            <h2 data-aos="fade-down">bio</h2>
+            <div id="about-text" class="text" data-aos="fade-down">${content.rendered}</div>
+        `;
 
         //sets the initial Underline for the tabs in the Featured Panel
         setUnderline(activeTab, tabUnderline);
