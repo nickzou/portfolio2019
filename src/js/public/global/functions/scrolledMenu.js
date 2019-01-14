@@ -2,7 +2,7 @@ import {menu, breakpointsInverse} from '../variables';
 
 const scrolledMenu = () => {
     const {laptop} = breakpointsInverse;
-    if (laptop == true) {
+    if (laptop.matches == true) {
         if (window.pageYOffset > (window.innerHeight - 10)) {
             if (!menu.classList.contains('active')) {
                 menu.classList.add('active');
