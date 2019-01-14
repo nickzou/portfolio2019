@@ -3,7 +3,7 @@ import {siteTitle, siteSubtitle, heroBackgroundImage} from './variables';
 
 document.addEventListener('DOMContentLoaded', ()=> {
     fetch('http://localhost/portfolio2019/admin//wp-json/wp/v2/pages/5')
-    .then((response) => { return response.json(); })
+    .then((response) => response.json())
     .then((data)=> {
         const {acf} = data;
         //sets Hero Background Image
