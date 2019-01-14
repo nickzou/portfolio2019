@@ -57,9 +57,7 @@ h1 {
     letter-spacing: 15px;
     font-weight: 800;
     text-transform: uppercase;
-    color: $yellow;
-    opacity: 0;
-    animation: TextIn 0.8s ease-out 1 forwards;
+    color: $yellow;  
     @include breakpoint (phablet) {
         font-size: 2.027rem;
     }
@@ -70,9 +68,7 @@ h2 {
     line-height: 125%;
     letter-spacing: 10px;
     font-weight: 600;
-    text-transform: uppercase;
-    opacity: 0;
-    animation: TextIn 0.8s ease-out 0.5s 1 forwards;
+    text-transform: uppercase;    
     @include breakpoint (phablet) {
         font-size: 1.802rem;
     }
@@ -84,9 +80,7 @@ h3 {
     letter-spacing: 5px;
     font-weight: 600;
     text-transform: uppercase;
-    color: $yellow;
-    opacity: 0;
-    animation: TextIn 0.8s ease-out 0.5s 1 forwards;
+    color: $yellow;    
 }
 
 h4 {
@@ -95,8 +89,6 @@ h4 {
     letter-spacing: 3px;
     font-weight: 600;
     color: $white;
-    opacity: 0;
-    animation: TextIn 0.8s ease-out 0.5s 1 forwards;
 }
 
 h5 {
@@ -105,9 +97,7 @@ h5 {
     letter-spacing: 1.5px;
     font-weight: 500;
     text-transform: uppercase;
-    color: $white;
-    opacity: 0;
-    animation: TextIn 0.8s ease-out 0.5s 1 forwards;
+    color: $white;   
 }
 
 p {
@@ -116,11 +106,13 @@ p {
     letter-spacing: 1.2px;
     font-weight: 400;
     color: $white;
-    opacity: 0;
-    animation: TextIn 0.8s ease-out 0.5s 1 forwards;
     @include breakpoint (phablet) {
         letter-spacing: 1px;
     }
+}
+
+.viewed {
+    animation: FadeIn 0.8s ease-out 0.5s 1 forwards;
 }
 
 body {
