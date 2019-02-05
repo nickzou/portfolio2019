@@ -18,6 +18,12 @@
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: minmax(auto, 10%) auto;
+    h2, p {
+        text-align: left;
+    }
+    h2 {
+        color: $yellow;
+    }
 }
 
 .info-panel-content {
@@ -25,6 +31,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
+    @include breakpoint (laptop) {
+        justify-content: flex-start;
+    }
+}
+
+.info-panel-content-slide {
+    text-align: center;
 }
 
 .feature-panel {

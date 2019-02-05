@@ -162,5 +162,12 @@ section {
     height: 40px;
     animation: spin 0.5s linear infinite;
   }
+
+  .show-in-mobile {
+      display: none;
+      @include breakpoint (laptop) {
+          display: block;
+      }
+  }
   
  

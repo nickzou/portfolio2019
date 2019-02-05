@@ -9,9 +9,17 @@
         @include breakpoint (desktop) {
             grid-template-columns: 45% 55%;
         }
+        @include breakpoint (laptop) {
+            grid-template-columns: 100%;
+        }
     }
     .inner-container {
         padding: 60px 15px;
+    }
+    .feature-panel {
+        @include breakpoint (laptop) {
+            display: none;
+        }
     }
     .feature-panel-container {
         overflow: hidden;
@@ -39,6 +47,9 @@
         height: calc(100% - 60px);
         overflow: hidden;
         padding-top: 20px;
+    }
+    .info-panel-content {
+        justify-content: flex-start;
     }
 }
 
