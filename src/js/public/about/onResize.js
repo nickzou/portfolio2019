@@ -1,5 +1,6 @@
 import {activeTab, tabUnderline} from './variables';
+import setUnderline from './functions/setUnderline';
 
-document.addEventListener('resize', ()=> {
+window.addEventListener('resize', ()=> {
     setInterval(() => setUnderline(activeTab, tabUnderline), 300);
 });

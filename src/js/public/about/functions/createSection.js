@@ -1,8 +1,7 @@
-import {featurePanelSlide} from '../variables';
 import renderItem from './renderItem';
 
-const createSection = (section, sectionName ) => {
-    featurePanelSlide.innerHTML = "";
+const createSection = (section, sectionName) => {
+    let parent = ``;
     section.forEach((s) => {
         const {section_title, item} = s;
 
@@ -10,7 +9,7 @@ const createSection = (section, sectionName ) => {
 
         item.forEach((i) => sectionItems += renderItem(i, sectionName));
 
-        featurePanelSlide.innerHTML += `
+        parent += `
             <section class="${sectionName}-section">
                 <h3 class="${sectionName}-section-title" data-aos="fade-down">${section_title}</h3>
                 <ul class="${sectionName}-list">
@@ -19,6 +18,7 @@ const createSection = (section, sectionName ) => {
             </section>
         `;
     });
+    return parent;
 }
 
 export default createSection;

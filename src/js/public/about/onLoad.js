@@ -1,4 +1,4 @@
-import {aboutTitle, infoPanelContent, aboutBackgroundImage, tabUnderline, activeTab, tabs, resumeTab, skillsTab} from './variables';
+import {aboutTitle, infoPanelContent, featurePanelSlide, aboutBackgroundImage, tabUnderline, activeTab, tabs, resumeTab, skillsTab} from './variables';
 import setUnderline from './functions/setUnderline';
 import createSection from './functions/createSection';
 
@@ -25,9 +25,14 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
         //Sets bio section text
         infoPanelContent.innerHTML = `
+            <div class="info-panel-content-slide">
             ${profilePicture()}
             <h2 data-aos="fade-down">bio</h2>
             <div id="about-text" class="text" data-aos="fade-down">${content.rendered}</div>
+            </div>
+            <div class="info-panel-content-slide show-in-mobile">
+                ${createSection(resumeSection, 'resume')}
+            </div>
         `;
 
         //sets the initial Underline for the tabs in the Featured Panel
@@ -51,10 +56,10 @@ document.addEventListener('DOMContentLoaded', ()=> {
         });
         
         if (resumeSection) {
-            createSection(resumeSection, 'resume');
+            featurePanelSlide.innerHTML = createSection(resumeSection, 'resume');
         }
 
-        resumeTab.addEventListener('click', () => createSection(resumeSection, 'resume'));
-        skillsTab.addEventListener('click', () => createSection(skillsSection, 'skills'));
+        resumeTab.addEventListener('click', () => featurePanelSlide.innerHTML = createSection(resumeSection, 'resume', featurePanelSlide));
+        skillsTab.addEventListener('click', () => featurePanelSlide.innerHTML = createSection(skillsSection, 'skills', featurePanelSlide));
     });
 });
