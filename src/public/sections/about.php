@@ -4,6 +4,13 @@
             <h1 data-aos="fade-down" id="about-title"></h1>
             <div class="info-panel-content">
             </div>
+            <div class="info-panel-navigation show-in-mobile">
+                <div class="button-wrapper">
+                    <button id="bio-button" class="info-panel-button active">bio</button>
+                    <button id="resume-button" class="info-panel-button">resume</button>
+                    <button id="skills-button" class="info-panel-button">skills</button>
+                </div>
+            </div>
         </div>
         <div id="about-feature-panel" class="feature-panel section-background-image jarallax">
             <div id="about-feature-panel" class="feature-panel-content">
