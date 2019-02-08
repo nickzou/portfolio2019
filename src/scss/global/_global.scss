@@ -164,9 +164,9 @@ section {
   }
 
   .show-in-mobile {
-      display: none;
+      display: none!important;
       @include breakpoint (laptop) {
-          display: block;
+          display: block!important;
       }
   }
   

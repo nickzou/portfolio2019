@@ -48,8 +48,29 @@
         overflow: hidden;
         padding-top: 20px;
     }
+    .info-panel {
+        @include breakpoint (laptop) {
+            height: 100%;
+            grid-template-rows: 32px calc(100% - 132px) 100px;
+        }
+        .info-panel-button {
+            @extend h2;
+            border: none;
+            color: white;
+            transition: 0.2s ease-in-out;
+            &.active {
+                color: $yellow;
+            }
+        }
+        .resume-section, .skills-section {
+            text-align: left;
+        }
+    }
     .info-panel-content {
         justify-content: flex-start;
+        @include breakpoint (laptop) {
+            overflow: hidden;
+        }
     }
 }
 
