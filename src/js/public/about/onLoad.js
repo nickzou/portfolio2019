@@ -1,6 +1,21 @@
-import {aboutTitle, infoPanelContent, featurePanelSlide, aboutBackgroundImage, tabUnderline, activeTab, tabs, resumeTab, skillsTab} from './variables';
+import {
+    aboutTitle,
+    infoPanelContent,
+    infoPanelContentSlide,
+    featurePanelSlide,
+    aboutBackgroundImage,
+    tabUnderline,
+    activeTab,
+    tabs,
+    resumeTab,
+    skillsTab,
+    bioButton,
+    resumeButton,
+    skillsButton
+} from './variables';
 import setUnderline from './functions/setUnderline';
 import createSection from './functions/createSection';
+import toggleInfoPanelButtonActive from './functions/toggleInfoPanelButtonActive';
 
 document.addEventListener('DOMContentLoaded', ()=> {
     fetch('http://localhost/portfolio2019/admin//wp-json/wp/v2/pages/19')
@@ -33,6 +48,9 @@ document.addEventListener('DOMContentLoaded', ()=> {
             <div class="info-panel-content-slide show-in-mobile">
                 ${createSection(resumeSection, 'resume')}
             </div>
+            <div class="info-panel-content-slide show-in-mobile">
+                ${createSection(skillsSection, 'skills')}
+            </div>
         `;
 
         //sets the initial Underline for the tabs in the Featured Panel
@@ -59,7 +77,27 @@ document.addEventListener('DOMContentLoaded', ()=> {
             featurePanelSlide.innerHTML = createSection(resumeSection, 'resume');
         }
 
-        resumeTab.addEventListener('click', () => featurePanelSlide.innerHTML = createSection(resumeSection, 'resume', featurePanelSlide));
-        skillsTab.addEventListener('click', () => featurePanelSlide.innerHTML = createSection(skillsSection, 'skills', featurePanelSlide));
+        resumeTab.addEventListener('click', () => featurePanelSlide.innerHTML = createSection(resumeSection, 'resume'));
+        skillsTab.addEventListener('click', () => featurePanelSlide.innerHTML = createSection(skillsSection, 'skills'));
+
+        bioButton.addEventListener('click', function() {
+            toggleInfoPanelButtonActive(this, resumeButton, skillsButton);
+            [...infoPanelContentSlide].forEach((slide)=> {
+                slide.style.left = "0%";
+            });
+            
+        });
+        resumeButton.addEventListener('click', function() {
+            toggleInfoPanelButtonActive(this, bioButton, skillsButton);
+            [...infoPanelContentSlide].forEach((slide)=> {
+                slide.style.left = "-100%";
+            });
+        });
+        skillsButton.addEventListener('click', function() {
+            toggleInfoPanelButtonActive(this, bioButton, resumeButton);
+            [...infoPanelContentSlide].forEach((slide)=> {
+                slide.style.left = "-200%";
+            });
+        });
     });
 });
